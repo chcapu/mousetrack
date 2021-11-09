@@ -1,4 +1,6 @@
 let cnv;
+let proportion;
+
 let freccia;
 let netflix;
 
@@ -10,8 +12,11 @@ function preload(){
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
   //background("white");
-  backgroundImage(netflix); 
+  backgroundImage(netflix);
   noCursor();
+
+  proportion = max(width / netflix.width, height / netflix.height);
+  netflix.resize(netflix.width * proportion, netflix.height * proportion);
 }
 
 function draw() {
