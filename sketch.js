@@ -1,4 +1,5 @@
 let cnv;
+let bg = "white";
 let proportion;
 
 let freccia;
@@ -11,12 +12,12 @@ function preload(){
 
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
-  //background("white");
-  backgroundImage(netflix);
   noCursor();
+  background(bg);
 
-  proportion = max(width / netflix.width, height / netflix.height);
-	netflix.resize (netflix.width * proportion, netflix.height * proportion);
+
+  // proportion = max(width / netflix.width, height / netflix.height);
+	// netflix.resize (netflix.width * proportion, netflix.height * proportion);
 }
 
 function draw() {
@@ -26,4 +27,10 @@ function draw() {
 
 function mouseClicked() {
   saveCanvas(cnv, "mouse path screenshot", "jpg");
+}
+
+function keyPressed() {
+  if (key === "n"){
+    bg = netflix;
+  }
 }
