@@ -16,7 +16,7 @@ function setup() {
   noCursor();
 
   proportion = max(width / netflix.width, height / netflix.height);
-  netflix.resize(netflix.width * proportion, netflix.height * proportion);
+	netflix.resize (netflix.width * proportion, netflix.height * proportion);
 }
 
 function draw() {
