@@ -1,13 +1,16 @@
 let cnv;
 let freccia;
+let netflix;
 
 function preload(){
   freccia = loadImage("./assets/cursor.svg");
+  netflix = loadImage("./assets/netflix-trace.png");
 }
 
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
-  background("white");
+  //background("white");
+  background(netflix);
   noCursor();
 }
 
