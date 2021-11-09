@@ -10,7 +10,7 @@ function preload(){
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
   //background("white");
-  background(netflix);
+  backgroundImage(netflix); 
   noCursor();
 }
 
