@@ -1,11 +1,12 @@
 let cnv;
-let bg = "white";
+let bg;
 let proportion;
+let sas;
 
 let freccia;
 let netflix;
 
-function preload(){
+function preload() {
   freccia = loadImage("./assets/cursor.svg");
   netflix = loadImage("./assets/netflix-trace.png");
 }
@@ -13,11 +14,15 @@ function preload(){
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
   noCursor();
-  background(bg);
-
+  background("white");
+  imageMode(CENTER);
 
   // proportion = max(width / netflix.width, height / netflix.height);
 	// netflix.resize (netflix.width * proportion, netflix.height * proportion);
+  //
+  // image(netflix, 0, 0);
+
+  sas = backgroundImage(netflix);
 }
 
 function draw() {
@@ -26,11 +31,21 @@ function draw() {
 }
 
 function mouseClicked() {
-  saveCanvas(cnv, "mouse path screenshot", "jpg");
+  saveCanvas(cnv, "mouse-path-screenshot", "jpg");
 }
 
 function keyPressed() {
-  if (key === "n"){
-    bg = netflix;
+  if (key === "c"){
+    console.log("pressato c");
+    //backgroundImage.clear();
   }
+}
+
+function backgroundImage(img) {
+  push();
+  translate(width/2, height/2);
+  imageMode(CENTER);
+  let scale = Math.max(width/img.width, height/img.height);
+  image(img, 0, 0, img.width*scale, img.height*scale);
+  pop();
 }
