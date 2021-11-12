@@ -2,27 +2,32 @@ let cnv;
 let bg;
 let proportion;
 let sas;
+let img;
 
 let freccia;
 let netflix;
 
 function preload() {
   freccia = loadImage("./assets/cursor.svg");
-  netflix = loadImage("./assets/netflix-trace.png");
+  //netflix = loadImage("./assets/netflix-trace.png");
 }
 
 function setup() {
   cnv = createCanvas(windowWidth,windowHeight);
   noCursor();
   background("white");
-  imageMode(CENTER);
+  // imageMode(CENTER);
+  //
+  // img = createElement("img", "./assets/gattino.jpeg");
+  // img.position(windowWidth/2, windowHeight/2);
+  // img.show();
 
   // proportion = max(width / netflix.width, height / netflix.height);
 	// netflix.resize (netflix.width * proportion, netflix.height * proportion);
   //
   // image(netflix, 0, 0);
 
-  sas = backgroundImage(netflix);
+  //sas = backgroundImage(netflix);
 }
 
 function draw() {
@@ -41,11 +46,11 @@ function keyPressed() {
   }
 }
 
-function backgroundImage(img) {
-  push();
-  translate(width/2, height/2);
-  imageMode(CENTER);
-  let scale = Math.max(width/img.width, height/img.height);
-  image(img, 0, 0, img.width*scale, img.height*scale);
-  pop();
-}
+// function backgroundImage(img) {
+//   push();
+//   translate(width/2, height/2);
+//   imageMode(CENTER);
+//   let scale = Math.max(width/img.width, height/img.height);
+//   image(img, 0, 0, img.width*scale, img.height*scale);
+//   pop();
+// }
